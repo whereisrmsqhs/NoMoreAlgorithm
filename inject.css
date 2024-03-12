@@ -1,0 +1,17 @@
+.hidden {
+  display: none;
+}
+
+.toggle-btn {
+  z-index: 100;
+}
+
+.start-study {
+  border-radius: 10px;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

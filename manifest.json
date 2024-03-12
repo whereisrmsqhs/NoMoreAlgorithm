@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "No more Algorithm",
+  "description": "deactivate youtube's video recommendation Algorithm",
+  "version": "1.0",
+  "action": {
+    "default_title": "No more Algorithm",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["inject.css"],
+      "js": ["inject.js"]
+    }
+  ]
+}
