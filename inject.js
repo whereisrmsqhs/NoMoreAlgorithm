@@ -1,34 +1,27 @@
-const toggleBtn = document.createElement("button");
-const contentContainer = document.body.querySelector(
-  "ytd-topbar-logo-renderer"
-);
-const mainContent = document.body.querySelector(
-  "ytd-two-column-browse-results-renderer"
-);
 const content = document.body.querySelector("#content");
-const sideRecommend = document.body.querySelector("ytd-watch-flexy");
+const ytdTopbar = document.body.querySelector("ytd-topbar-logo-renderer");
+const miniGuide = document.body.querySelector("ytd-mini-guide-renderer");
+const iconButton = document.body
+  .querySelector("yt-icon-button")
+  .querySelector("#button");
+const centerContainer = document.createElement("div");
 const phrases = document.createElement("h1");
-phrases.innerText = "Let's Study!";
-if (mainContent.classList) {
+const searchBar = document.body.querySelector("ytd-masthead").querySelector("#center");
+
+if (document.body.querySelector("ytd-browse")) {
+  const mainContent = document.body.querySelector("ytd-browse");
   mainContent.classList.add("hidden");
 }
-sideRecommend.classList.add("hidden");
-console.log(sideRecommend);
-toggleBtn.classList.add("toggle-btn");
-toggleBtn.innerText = "Finish";
 
-function handleBtn() {
-  mainContent.classList.toggle("hidden");
-  toggleBtn.classList.toggle("start-study");
-  if (toggleBtn.classList.contains("start-study")) {
-    toggleBtn.innerText = "Start!";
-  } else {
-    toggleBtn.innerText = "Finish";
-  }
+if (document.body.querySelector("ytd-watch-flexy")) {
+  const sideRecommend = document.body.querySelector("ytd-watch-flexy");
+  sideRecommend.classList.add("hidden");
 }
 
-toggleBtn.addEventListener("click", handleBtn);
-contentContainer.appendChild(toggleBtn);
-content.appendChild(phrases);
+if (iconButton.getAttribute("aria-pressed")) {
+  iconButton.getAttribute("aria-pressed") = false;
+}
+miniGuide.classList.add("hidden");
 
-console.log(phrases.innerText);
+phrases.innerText = "Let's Study!";
+content.appendChild(phrases);
